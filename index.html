@@ -270,4 +270,27 @@
         <div class="info">
           <h3>Andrean Qotrunnada</h3>
           <p><strong>Peran:</strong> UI/UX Designer</p>
-        </div
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  document.getElementById("filterRole").addEventListener("change", function () {
+    const selectedRole = this.value;
+    const anggotaList = document.querySelectorAll(".anggota");
+
+    anggotaList.forEach(function (anggota) {
+      const role = anggota.getAttribute("data-role");
+
+      if (selectedRole === "all" || role === selectedRole) {
+        anggota.style.display = "flex";
+      } else {
+        anggota.style.display = "none";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
